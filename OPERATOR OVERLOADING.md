@@ -1,42 +1,43 @@
 # Exp.No:27  
 ## Operator Overloading
-
 ---
-
 ### AIM  
-To write a Python program to perform division of two complex numbers using the binary '/' operator overloading. Class name: `Complex`, where the objects `Ob1 = Complex(10, 21)` and `Ob2 = Complex(2, 3)` represent complex numbers.
+To write a Python program to overload a comparison operator using a class named `A`.
 
 ---
-
 ### ALGORITHM
-
-1. **Start the Program.**
-2. **Define the Complex class**:
-   - Define the constructor `__init__()` to accept two parameters: `real` and `imag` (representing the real and imaginary parts of the complex number).
-   - Assign these values to `self.real` and `self.imag` respectively.
-3. **Define the `__truediv__()` method** to perform the division of two complex numbers:
-   - Calculate the real part of the result as the division of `self.real` by `other.real`.
-   - Calculate the imaginary part of the result as the division of `self.imag` by `other.imag`.
-   - Return a new Complex object with the calculated real and imaginary parts.
-4. **Define the `__repr__()` method** to represent the complex number as a string.
-   - Return a string formatted to display the real and imaginary parts with one decimal place using `f"{self.real:.1f}, {self.imag:.1f}"`.
-5. **Create two objects of the Complex class**:
-   - `Ob1 = Complex(10, 21)` represents the complex number `10 + 21i`.
-   - `Ob2 = Complex(2, 3)` represents the complex number `2 + 3i`.
-6. **Perform the division operation**: Use the `/` operator to divide `Ob1` by `Ob2`. This will call the `__truediv__()` method.
-7. **Print the result**: Print the result of the division, which will be formatted by the `__repr__()` method.
-8. **End the Program.**
+1. Begin the program.  
+2. Define a class `A` with an `__init__` method that accepts a parameter `val` and assigns it to `self.val`.  
+3. Define the `__gt__` method to overload the `>` operator:  
+   - If `self.val` is greater than `other.val`, print `"ob1 is greater than ob2"`.  
+   - Otherwise, print `"ob2 is greater than ob1"`.  
+4. Create two objects `ob1 = A(2)` and `ob2 = A(3)`.  
+5. Use the `>` operator to compare `ob1` and `ob2`.  
+6. Terminate the program.
 
 ---
-
 ### PROGRAM
+```python
+# Reg.No- 212222060100
+# Name- Jothivanan T
+class A:
+    def __init__(self, val):
+        self.val = val
 
-```
+    def __gt__(self, other):
+        if self.val > other.val:
+            print("ob1 is greater than ob2")
+        else:
+            print("ob2 is greater than ob1")
 
+ob1 = A(2)
+ob2 = A(3)
+ob1 > ob2
 ```
 
 ### OUTPUT
+<img width="523" height="148" alt="image" src="https://github.com/user-attachments/assets/9e9f4780-8371-4ba6-83da-2038e899bfe5" />
 
 
 ### RESULT
-
+Thus, the Python program to overload a comparison operator using class `A` has been successfully executed and the output is verified.
